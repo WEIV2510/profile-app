@@ -1,48 +1,55 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles.css';
-function App(){
-  <>
-   <dic className='card'>
-    <Avatar />
-     <div className='data'>
-      <Intro />
-     </div>
-   </dic>
-  </>
-}
-function SkillList(){
-  return(
-    <div className='skill-list'>
-      <Skill skill='Sleep' emoji='🦾' color='red' />
-      <Skill skill='MonkyBrain' emoji='🧠' color='blue' />
-      <Skill skill='Relax' emoji='👌' color='green' />
-      <Skill skill='Rock' emoji=' 🤘' color='cyan' />
+
+function App() {
+  return (
+    <>
+      <div className='card'>
+        <Avatar />
+        <dvi className ='data'>
+          <Intro/>
+          <SkillList/>
+        </dvi>
+      </div>
+    </>
+  );
+  }
+
+  function SkillList () {
+    return (
+      <div className="skill-list">
+        <Skill skill = "sleep" emoji = "✌️" color = "brown" />
+        <Skill skill = "play" emoji = "🦾" color = "yellow" />
+        <Skill skill = "learning" emoji = "💀" color = "white" /> 
+        <Skill skill = "work" emoji = "☠️" color = "silver" />
+      </div>
+    );
+  }
+
+function Skill(props) {
+  return (
+    <div className="skill" style={{ backgroundColor: props.color }}>
+      <span>{props.skill}</span>
+      <span>{props.emoji}</span>
     </div>
   );
 }
-function Skill(prop){
-  return(
-    <div className='skill'> style={{ backgroundColor: prop.color }}
-      <span>(prop.skill)</span>
-      <span>(prop.emoji)</span>
-    </div>
-  );
-}
+
 function Intro() {
-  return(
+  return (
     <div>
-      <h1>นายรัฐกานต์ มังกิจ</h1>
+      <h1>นายวีระยุทธ ลักษ์ศิลป์</h1>
       <p>
-        นักศึกษาสาขาเทโนโลยีสารสนเทสและการสื่อสาร คณะวิทยาศาสตร์
+        นักศึกษาสาขาเทคโนโลยีสารสนเทศและการสื่อสาร คณะวิทยาศาสตร์ 
+        มหาวิทยาลัยอุบลราชธานี
       </p>
     </div>
-  )
+  );
 }
-function Avatar(){
-  return<img className='avatar' src='ดาวน์โหลด.jpg' alt='MyAvatar' />;
 
-
+function Avatar() {
+  return <img className='avatar' src="photo.jpg" alt='My Avatar' />;
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -51,7 +58,3 @@ root.render(
     <App />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
